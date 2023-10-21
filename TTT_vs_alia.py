@@ -19,6 +19,7 @@ intel = yf.download('INTC', start='2023-01-01', end=today)
 tsmc = yf.download('TSM', start='2023-01-01', end=today)
 asml = yf.download('ASML', start='2023-01-01', end=today)
 samsung = yf.download('SMSN.IL', start='2023-01-01', end=today)
+amd = yf.download('AMD', start='2023-01-01', end=today)
 # compute / models
 amazon = yf.download('AMZN', start='2023-01-01', end=today)
 alphabet = yf.download('GOOG', start='2023-01-01', end=today)
@@ -31,8 +32,8 @@ ttt = yf.download('TTT', start='2023-01-01', end=today)
 
 # %%
 # normalise prices
-assets = [nvidia, intel, tsmc, asml, samsung, amazon, alphabet, microsoft, alibaba, baidu, tencent, ttt]
-asset_tickers = ["NVDA", "INTC", "TSM", "ASML", "SMSN.IL", "AMZN", "GOOG", "MSFT", "BABA", "BIDU", "TCEHY", "TTT"]
+assets = [nvidia, intel, tsmc, asml, samsung, amd, amazon, alphabet, microsoft, alibaba, baidu, tencent, ttt]
+asset_tickers = ["NVDA", "INTC", "TSM", "ASML", "SMSN.IL", "AMD", "AMZN", "GOOG", "MSFT", "BABA", "BIDU", "TCEHY", "TTT"]
 
 for asset in assets:
     asset["Normalised"] = asset["Adj Close"] / asset.iloc[0]["Adj Close"] * 100
